@@ -1,0 +1,10 @@
+<html>
+<body>
+<img id="blah" alt="your image"  />
+
+<input type="file" 
+    onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+
+
+</body>
+</html>

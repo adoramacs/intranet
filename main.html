@@ -1,0 +1,31 @@
+<html>
+<body onload="checkSession()">
+<font face = "tahoma">
+<frameset cols="22%,78%">
+   <frame src="listmenu.html" name="menuframe"/>
+   <frame src="https://www.adorama.com/" name="showframe"/>
+</frameset>
+</font>
+
+
+<script>
+session_start();
+	window.addEventListener('unload', function(event) {
+	sessionStorage.removeItem('logged');
+	sessionStorage.removeItem('intranetloggedin');
+	sessionStorage.removeItem('username');
+      });
+
+checkSession(){
+	var user_log= window.sessionStorage.getItem('intranetloggedin');
+	if(user_log != TRUE){
+		window.location.replace(".\login.html");
+	}
+	else{
+		window.location.replace(".\listmenu.html");
+	}
+}
+
+</script>
+</body>
+</html>
